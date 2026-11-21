@@ -1,0 +1,2 @@
+import {posts} from '@/lib/data';import {BlogCard} from '@/components/Site';import {getDictionary} from '@/lib/i18n';
+export default async function BlogPage({params}:{params:Promise<{locale:string}>}){const {locale}=await params;const t=getDictionary(locale);return <><section className="page-hero"><div className="kicker">{t.nav.blog.toUpperCase()}</div><h1>{t.blogTitle}</h1><p>{t.featuredText}</p></section><section className="section"><div className="blog-grid">{posts.map(post=><BlogCard key={post.slug} post={post} locale={locale}/>)}</div></section></>}

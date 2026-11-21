@@ -1,0 +1,2 @@
+import {getDictionary} from '@/lib/i18n';
+export default async function AboutPage({params}:{params:Promise<{locale:string}>}){const {locale}=await params;const t=getDictionary(locale);return <><section className="page-hero"><div className="kicker">{t.aboutKicker}</div><h1>{t.aboutHeading}</h1><p>{t.aboutIntro}</p></section><section className="content"><h2>{t.aboutSection}</h2><p>{t.aboutBody}</p><h2>{t.approach}</h2><p>{t.approachBody}</p><h2>{t.ourDestinations}</h2><p>{t.destinationBody}</p></section></>}

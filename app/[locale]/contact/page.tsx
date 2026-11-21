@@ -1,0 +1,3 @@
+import {getDictionary} from '@/lib/i18n';
+import ContactForm from '@/components/ContactForm';
+export default async function ContactPage({params}:{params:Promise<{locale:string}>}){const {locale}=await params;const t=getDictionary(locale);return <><section className="page-hero"><div className="kicker">{t.nav.contact.toUpperCase()}</div><h1>{t.contactTitle}</h1><p>{t.contactText}</p></section><section className="section contact-grid"><div><h2>{t.talk}</h2><p className="section-intro">{t.contactSub}</p><p><b>WhatsApp</b><br/>+6282221233898</p><p><b>Email</b><br/>hello@notepaths.com</p><a className="button button-dark" href="https://wa.me/6282221233898" target="_blank" rel="noreferrer">{t.whatsapp} ↗</a></div><ContactForm t={t}/></section></>}
